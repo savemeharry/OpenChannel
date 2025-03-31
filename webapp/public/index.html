@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="theme-color" content="#0A0B18" />
+    <meta
+      name="description"
+      content="OpenChannel - Telegram subscription management"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Load Sora font -->
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <title>OpenChannel</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    
+    <style>
+      body {
+        background-color: #0A0B18;
+        color: #FFFFFF;
+        font-family: 'Sora', sans-serif;
+      }
+      
+      /* Preloader */
+      .app-preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #0A0B18;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+      }
+      
+      .spinner {
+        width: 40px;
+        height: 40px;
+        position: relative;
+      }
+      
+      .spinner:before, .spinner:after {
+        content: '';
+        position: absolute;
+        border-radius: 50%;
+        animation: spin 1.8s linear infinite;
+      }
+      
+      .spinner:before {
+        width: 100%;
+        height: 100%;
+        border: 3px solid rgba(75, 107, 255, 0.2);
+        border-top: 3px solid #4B6BFF;
+        top: 0;
+        left: 0;
+      }
+      
+      .spinner:after {
+        width: 60%;
+        height: 60%;
+        border: 3px solid rgba(34, 232, 124, 0.2);
+        border-top: 3px solid #22E87C;
+        top: 20%;
+        left: 20%;
+        animation-duration: 1.2s;
+        animation-direction: reverse;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    
+    <!-- Preloader -->
+    <div class="app-preloader" id="appPreloader">
+      <div class="spinner"></div>
+    </div>
+    
+    <div id="root"></div>
+    
+    <script>
+      // Hide preloader when app is loaded
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          const preloader = document.getElementById('appPreloader');
+          if (preloader) {
+            preloader.style.opacity = '0';
+            preloader.style.transition = 'opacity 0.3s ease';
+            setTimeout(function() {
+              preloader.style.display = 'none';
+            }, 300);
+          }
+        }, 500);
+      });
+    </script>
+  </body>
+</html> 
