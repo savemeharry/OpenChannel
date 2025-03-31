@@ -44,8 +44,11 @@ export const getSubscriptionStatus = async (userId) => {
   }
 };
 
-export default {
+// Create an API object before exporting as default
+const apiService = {
   getSubscriptionPlans,
   createInvoice,
   getSubscriptionStatus,
-}; 
+};
+
+export default apiService; 

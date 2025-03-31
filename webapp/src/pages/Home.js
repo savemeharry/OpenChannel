@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import Button from '../components/Button';
 import UserProfile from '../components/UserProfile';
 import TelegramStar from '../components/TelegramStar';
-import { MdOutlineLock, MdOutlineChat, MdFlashOn, MdOutlineDiamond } from 'react-icons/md';
 
 const Container = styled.div`
   max-width: 600px;
@@ -180,7 +179,7 @@ const PinkCircle = styled(AccentCircle)`
   left: 30%;
 `;
 
-// Создаем SVG иконки для использования вместо импорта из react-icons
+// Создаем SVG иконки для использования вместо импорта из react-icons/md
 const IconLock = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>

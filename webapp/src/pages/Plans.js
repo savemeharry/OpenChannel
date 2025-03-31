@@ -117,7 +117,6 @@ const Plans = () => {
   const [processingPlanId, setProcessingPlanId] = useState(null);
   
   // Initialize with user data from Telegram WebApp
-  const initData = WebApp.initData || '';
   const userId = WebApp.initDataUnsafe?.user?.id;
   
   useEffect(() => {
